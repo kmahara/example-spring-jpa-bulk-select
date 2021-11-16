@@ -17,3 +17,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
   implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
 }
+
+bootRun {
+   jvmArgs = ["-Xmx128m"]
+}

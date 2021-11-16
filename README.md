@@ -11,7 +11,12 @@ docker-compose up -d
 ```
 
 * example.Application を実行する。
-  * 実行時に最大メモリを指定する。`-Xmx128m`
+
+```
+gradle bootRun
+```
+
+  * Eclipse 等で実行する場合、起動オプションで最大メモリを指定する: `-Xmx128m`
 
 # Bulk insert 時に気をつけること
 

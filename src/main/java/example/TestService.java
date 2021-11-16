@@ -119,7 +119,9 @@ public class TestService {
 
     try {
       entityManager.createQuery("from Data", Data.class)
-          .setHint(org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE, FETCH_SIZE).getResultStream()
+        // ここをコメントアウトすると、一度に全件取得し、OutOfMemoryError となる。
+          .setHint(org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE, FETCH_SIZE)
+          .getResultStream()
           .forEach(data -> {
             selectCount++;
 
