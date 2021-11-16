@@ -26,7 +26,7 @@ gradle bootRun
   * まだ DB に対して SQL 発行していないエンティティが複数にまとめられた INSERT 文が作成され、DB に対し実行される。
 * 続けて entityManager.clear() を呼び、エンティティを entityManager の管理対象から外し GC 時にメモリから開放できるようにする。
 
-# Bulk update 時に気をつけること
+# Bulk select 時に気をつけること
 
 * `@Transactional(readOnly = true)` を指定し、read only のトランザクション内で実行する。
 * select 時に org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE で一度に取得するデータ量を指定する。
